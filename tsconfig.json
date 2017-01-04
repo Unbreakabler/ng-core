@@ -1,19 +1,42 @@
 {
   "compilerOptions": {
-    "declaration": true,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "lib": ["es6", "dom"],
-    "rootDir": ".",
+    "target": "es5",
     "module": "commonjs",
     "moduleResolution": "node",
-    "sourceMap": true,
-    "target": "es5",
-    "types": [
-      "hammerjs",
-      "lodash",
-      "node"
-    ]
+    "lib": ["es6", "dom"],
+    "rootDir": ".",
+
+    "sourceMap": true, // Generates corresponding ‘.map’ file
+    "emitDecoratorMetadata": true, // Emit design-type metadata for decorated declarations in source
+    "experimentalDecorators": true, // Enables experimental support for ES7 decorators
+    "removeComments": false, // Remove all comments except copy-right header comments beginning with /*!
+
+    "noFallthroughCasesInSwitch": true, // Report errors for fallthrough cases in switch statement
+    "noImplicitAny": false, // Raise error on expressions and declarations with an implied ‘any’ type
+    "noImplicitReturns": true, // Report error when not all code paths in function return a value
+    // "noImplicitThis": true, // Raise error on this expressions with an implied ‘any’ type
+
+    // This creates warning when there are unused imports within imported
+    // node_module packages so better to leave it disabled and use tslint no-unused-variable instead
+    "noUnusedLocals": false, // Report errors on unused locals
+
+    // TODO(lint) turn on this bug finder noUnusedParameters and cleanup
+    //   * add '_'' prefix to params that are actually not used to suppress warning
+    //   * fix bugs that this exposes
+    "noUnusedParameters": false, // Report errors on unused parameters
+
+    "pretty": true // Stylize errors and messages using color and context
+
+    // "baseUrl": "./",
+    // "paths": {
+    //   "src/*": ["./src/*"],
+    //   "cad/*": ["./src/cad/*"],
+    //   "common/*": ["./src/common/*"],
+    //   "resources/*": ["./src/resources/*"]
+    // }
+  },
+  "awesomeTypescriptLoaderOptions": {
+    "forkChecker": true
   },
   "include": [
     "index.ts",
@@ -25,5 +48,39 @@
   "exclude": [
     "node_modules/**/*",
     "dist/**/*"
+  ],
+  "types": [
+    "hammerjs",
+    "lodash",
+    "node"
   ]
 }
+// {
+//   "compilerOptions": {
+//     "declaration": true,
+//     "emitDecoratorMetadata": true,
+//     "experimentalDecorators": true,
+//     "lib": ["es6", "dom"],
+//     "rootDir": ".",
+//     "module": "commonjs",
+//     "moduleResolution": "node",
+//     "sourceMap": true,
+//     "target": "es5",
+//     "types": [
+//       "hammerjs",
+//       "lodash",
+//       "node"
+//     ]
+//   },
+//   "include": [
+//     "index.ts",
+//     "server.ts",
+//     "globals.ts",
+//     "webpack-config.ts",
+//     "src/**/*"
+//   ],
+//   "exclude": [
+//     "node_modules/**/*",
+//     "dist/**/*"
+//   ]
+// }

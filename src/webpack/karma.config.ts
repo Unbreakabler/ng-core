@@ -1,36 +1,36 @@
 import { webpackConfig } from './webpack.test';
 
-export var karmaConfig = function (config) {
-  var _config = {
+export const karmaConfig = (config) => {
+  const _config = {
     basePath: '',
 
-    frameworks: ['jasmine'],
+    frameworks: [ 'jasmine' ],
 
     files: [
-      {pattern: './config/karma-test-shim.js', watched: false}
+      { pattern: './config/karma-test-shim.js', watched: false },
     ],
 
     preprocessors: {
-      './config/karma-test-shim.js': ['webpack', 'sourcemap']
+      './config/karma-test-shim.js': [ 'webpack', 'sourcemap' ],
     },
 
     webpack: webpackConfig,
 
     webpackMiddleware: {
-      stats: 'errors-only'
+      stats: 'errors-only',
     },
 
     webpackServer: {
-      noInfo: true
+      noInfo: true,
     },
 
-    reporters: ['progress'],
+    reporters: [ 'progress' ],
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: false,
-    browsers: ['PhantomJS'],
-    singleRun: true
+    browsers: [ 'PhantomJS' ],
+    singleRun: true,
   };
 
   config.set(_config);

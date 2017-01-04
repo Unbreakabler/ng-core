@@ -1,31 +1,33 @@
 import * as webpack from 'webpack';
-import * as webpackMerge from 'webpack-merge';
-import { commonConfig } from './webpack.common';
+const webpackMerge = require('webpack-merge');;
 import { WebpackHelper } from './helpers';
+import { commonConfig } from './webpack.common';
 
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 const helpers = WebpackHelper.getInstance();
+/* tslint:disable */
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+/* tslint:enable */
 
-export var clientConfig = webpackMerge(commonConfig, {
+export let clientConfig = webpackMerge(commonConfig, {
   target: 'web',
 
   entry: {
-    'root': './biz.client' // TODO: Make this dynamic
+    root: './biz.client', // TODO: Make this dynamic
   },
 
   output: {
     path: helpers.root('dist/client'),
-    filename: '[name].js'
+    filename: '[name].js',
   },
 
   plugins: [
     new webpack.optimize.CommonsChunkPlugin('common'),
 
-    new CopyWebpackPlugin([{
+    new CopyWebpackPlugin([ {
       context: 'src',
       from: '**/index.html',
-      to: '..'
-    }])
+      to: '..',
+    } ]),
   ],
 
   node: {
@@ -34,6 +36,6 @@ export var clientConfig = webpackMerge(commonConfig, {
     process: true,
     module: false,
     clearImmediate: false,
-    setImmediate: false
-  }
+    setImmediate: false,
+  },
 });

@@ -3,10 +3,10 @@
 // var serverConfig = require('./webpack.server.dev.js');
 import { clientConfig } from './webpack.client.dev';
 import { serverConfig } from './webpack.server.dev';
-export default [
+export const config = [
   // Client
   clientConfig,
 
   // Server
-  serverConfig
+  serverConfig,
 ];

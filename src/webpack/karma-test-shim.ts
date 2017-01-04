@@ -1,5 +1,6 @@
 Error.stackTraceLimit = Infinity;
 
+/* tslint:disable */
 require('core-js/es6');
 require('reflect-metadata');
 
@@ -10,12 +11,12 @@ require('zone.js/dist/sync-test');
 require('zone.js/dist/jasmine-patch');
 require('zone.js/dist/async-test');
 require('zone.js/dist/fake-async-test');
-
-const appContext = require.context('../src', true, /\.spec\.ts/);
-
-appContext.keys().forEach(appContext);
-
 const testing = require('@angular/core/testing');
 const browser = require('@angular/platform-browser-dynamic/testing');
+/* tslint:enable */
+
+// const appContext = require.context('../src', true, /\.spec\.ts/);
+
+// appContext.keys().forEach(appContext);
 
 testing.TestBed.initTestEnvironment(browser.BrowserDynamicTestingModule, browser.platformBrowserDynamicTesting());
