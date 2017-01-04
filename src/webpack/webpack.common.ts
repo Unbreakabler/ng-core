@@ -4,8 +4,9 @@ import { WebpackHelper } from './helpers';
 
 const helpers = WebpackHelper.getInstance();
 /* tslint:disable */
-const ForkCheckerPlugin = require('awesome-typescript-loader').ForkCheckerPlugin;
+// const ForkCheckerPlugin = require('awesome-typescript-loader').ForkCheckerPlugin;
 /* tslint:enable */
+import { CheckerPlugin } from 'awesome-typescript-loader';
 
 export const commonConfig = {
   resolve: {
@@ -47,7 +48,7 @@ export const commonConfig = {
   },
 
   plugins: [
-    new ForkCheckerPlugin(),
+    new CheckerPlugin(),
 
     new webpack.ContextReplacementPlugin(
       // The (\\|\/) piece accounts for path separators in *nix and Windows

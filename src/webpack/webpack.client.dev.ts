@@ -8,7 +8,7 @@ const helpers = WebpackHelper.getInstance();
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 /* tslint:enable */
 
-export let clientConfig = webpackMerge(commonConfig, {
+export const clientConfig = webpackMerge(commonConfig, {
   target: 'web',
 
   entry: {
