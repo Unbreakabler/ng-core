@@ -11,6 +11,14 @@ require('zone.js/dist/sync-test');
 require('zone.js/dist/jasmine-patch');
 require('zone.js/dist/async-test');
 require('zone.js/dist/fake-async-test');
+<<<<<<< HEAD
+=======
+
+// const appContext = require.context('../src', true, /\.spec\.ts/);
+
+// appContext.keys().forEach(appContext);
+
+>>>>>>> develop
 const testing = require('@angular/core/testing');
 const browser = require('@angular/platform-browser-dynamic/testing');
 /* tslint:enable */
